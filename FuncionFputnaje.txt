@@ -1,0 +1,15 @@
+DELIMITER //
+
+CREATE FUNCTION fPuntaje ( ipuntaje INT )
+RETURNS varchar(25)
+
+BEGIN
+	declare Categoria  varchar(25);	
+	SET Categoria := if(ipuntaje < 5 , "MALA" , "Buena");
+    
+    RETURN Categoria;
+    
+
+END; //
+
+DELIMITER ;
